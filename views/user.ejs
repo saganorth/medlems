@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony club</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+           <h1>Harmony Club</h1>
+          <ul>
+            <li><a href="/start">Hem</a></li>
+            <li><a href="/member">medlems lista</a></li>
+            <li><a href="/forum">Medlemskap</a></li>
+            <li><a href="/acticiy">Aktiviteter</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="userprofil">
+ 
+      <h1> name: <%= name %></h1><br>
+      <img src="/pic/prolibild.jpeg" alt="profilphoto">
+      <p> email: <%= email %></p>
+      <p>tel: <%= tel %></p>
+      <p>joined: <%= added %></p>
+      <p>favorie aktivitet:  <%= favorite %></p> 
+     
+      <form action="/user/delete/<%= id %>" method="post">
+        <button id="delete-user-btn"> delete </button>
+       </form>
+      <button id="show-form-btn">update</button>
+    </div>
+      <form action="/user/update/<%= id %>" id ="update-form" method="post" style="display:none;">
+        
+        <label for="name">name</label>
+        <input type="text" id="name" name="name" value="<%= name %>">
+
+        <br>
+        <label for="email">email</label>
+        <input type="text" id="email" name="email" value="<%= email %>">
+        <br>
+        <label for="tel">tel</label>
+        <input type="text" id="tel" name="tel" value="<%= tel %>">
+        <br>
+        <label for="favorite">favorite</label>
+        <input type="text" id="favorite" name="favorite" value="<%= favorite %>">
+        <br>
+        <label for="added">added</label>
+<input type="date" id="added" name="added" value="<%= added %>">
+
+        <br>
+        <button type="submit">Save</button>
+    </form>
+   
+
+    <script>
+   
+   document.addEventListener("DOMContentLoaded", function() {
+  const showFormBtn = document.getElementById("show-form-btn");
+  const updateForm = document.getElementById("update-form");
+  
+
+  showFormBtn.addEventListener("click", function() {
+    updateForm.style.display = "block";
+  });
+});
+
+
+ 
+
+
+    </script>
+</body>
+<footer>
+    <div class="contact-info">
+      <p>Adress: Harmony Club, Storgatan 10, 123 45 Stockholm</p>
+      <p>Telefon: 08-123 456 78</p>
+      <p>E-post: <a href="mailto:harmonyclub@email.com">harmonyclub@email.com</a></p>
+      <p>Hemsida: <a href="http://www.harmonyclub.com">www.harmonyclub.com</a></p>
+    </div>
+  </footer>
+  
+</html>

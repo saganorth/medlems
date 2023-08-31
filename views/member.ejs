@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Club</title>
+    <link rel="stylesheet" href="/style.css">
+
+    
+</head>
+<body>
+    <header>
+        <nav>
+           <h1>Harmony Club</h1>
+          <ul>
+            <li><a href="/start">Hem</a></li>
+            <li><a href="/member">medlems lista</a></li>
+            <li><a href="/forum">Medlemskap</a></li>
+           
+            <li><a href="/acticiy">Aktiviteter</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="member-list"> 
+      
+            <h1>medlems lista</h1>
+            <label>Sortera efter:</label>
+           
+
+            <select onchange="sort(this)" id="sort_by">
+              <option value="0"<%= +sort === 0 ? "selected" : ""%>>default</option>
+              <option value="1"<%= +sort === 1 ? "selected" : ""%>>a-z</option>
+              <option value="-1"<%= +sort === -1 ? "selected" : ""%>>z-a</option>
+          </select>
+           
+            <ul>
+            <% member.forEach((member) => { %> 
+                
+              <li>
+                <a href="/user/<%= member._id %>">
+               <h2><%=member.name %></a></h2>
+         
+              </li>
+              <% }); %>
+            </ul>   
+      </div>
+      <script>
+        function sort(select) {
+    const selectedValue = select.value;
+    const url = new URL(window.location.href);
+    url.searchParams.set("sort", selectedValue);
+    window.location.href = url.toString();
+}
+    </script>
+</body>
+<footer>
+    <div class="contact-info">
+      <p>Adress: Harmony Club, Storgatan 10, 123 45 Stockholm</p>
+      <p>Telefon: 08-123 456 78</p>
+      <p>E-post: <a href="mailto:harmonyclub@email.com">harmonyclub@email.com</a></p>
+      <p>Hemsida: <a href="http://www.harmonyclub.com">www.harmonyclub.com</a></p>
+    </div>
+  </footer>
+  
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Harmony Club</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+           <h1>Harmony Club</h1>
+          <ul>
+            <li><a href="/start">Hem</a></li>
+            <li><a href="/member">medlems lista</a></li>
+            <li><a href="/forum">Medlemskap</a></li>  
+            <li><a href="/acticiy">Aktiviteter</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="member-form">
+
+        <form action="/member/create" method="post">
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="tel">Tel</label>
+            <input type="text" id="tel" name="tel">
+            <br>
+            <label for="favorite">Favortie</label>
+            <input type="text" id="favorite" name="favorite">
+            <br>
+            <label for="date">Datum när de gick med</label>
+            <input type="date" id="added" name="added" value="<?php echo date('Y-m-d'); ?>">
+            <br>
+            <button>Save</button>
+          </form>
+          
+      </div>
+</body>
+<footer>
+    <div class="contact-info">
+      <p>Adress: Harmony Club, Storgatan 10, 123 45 Stockholm</p>
+      <p>Telefon: 08-123 456 78</p>
+      <p>E-post: <a href="mailto:harmonyclub@email.com">harmonyclub@email.com</a></p>
+      <p>Hemsida: <a href="http://www.harmonyclub.com">www.harmonyclub.com</a></p>
+    </div>
+  </footer>
+  
+</html>
